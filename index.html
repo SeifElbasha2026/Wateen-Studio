@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WATEEN Studio - تصميم مواقع تعريفيّة واحترافية تجلب لك العملاء">
+  <title>WATEEN Studio | تصميم مواقع احترافية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #050507; --bg-card: #101015; --bg-section: #0a0a0f; --bg-input: #15151a;
+      --border-color: #1a1a1a; --border-card: #222222; --text-main: #ffffff;
+      --text-muted: #aaaaaa; --text-dim: #888888; --brand-whatsapp: #25D366;
+      --brand-messenger: #0084FF; --font-cairo: 'Cairo', sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:var(--font-cairo)}
+    html{scroll-behavior:smooth}
+    body{background-color:var(--bg-dark);color:var(--text-main);line-height:1.6;overflow-x:hidden}
+    header{padding:20px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-color);position:sticky;top:0;background:rgba(5,5,7,0.95);backdrop-filter:blur(10px);z-index:1000}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo-icon{width:45px;height:45px;background:var(--text-main);color:var(--bg-dark);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:28px;border-radius:12px}
+    .logo-text{font-weight:900;font-size:22px}
+    nav{display:flex;gap:20px}
+    nav a{color:var(--text-muted);text-decoration:none;font-weight:600;font-size:15px;transition:0.3s}
+    nav a:hover{color:var(--text-main)}
+    .hero{padding:90px 5% 70px;text-align:center;background:radial-gradient(circle at center, #1a1a2e 0%, var(--bg-dark) 70%)}
+    .hero h1{font-size:clamp(28px,5vw,52px);line-height:1.2;margin-bottom:15px;font-weight:900}
+    .hero h1 span{color:var(--text-dim);display:block;margin-top:5px;font-weight:700}
+    .hero p{color:var(--text-muted);font-size:clamp(16px,2vw,18px);margin-bottom:30px}
+    .btn-whatsapp{background:var(--brand-whatsapp);color:var(--text-main);padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px;font-size:18px;transition:0.3s}
+    .btn-whatsapp:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(37,211,102,0.2)}
+    .services{padding:60px 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1200px;margin:0 auto}
+    .card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:16px;padding:30px;text-align:center;transition:0.3s}
+    .card:hover{transform:translateY(-5px);border-color:#333}
+    .card .icon{font-size:40px;margin-bottom:10px}
+    .card h3{margin-bottom:10px;font-size:20px}
+    .card p{color:var(--text-dim);font-size:14px}
+    .about{padding:80px 5%;background:var(--bg-section);border-top:1px solid var(--border-color);border-bottom:1px solid var(--border-color)}
+    .about-container{max-width:1100px;margin:0 auto}
+    .section-title{text-align:center;margin-bottom:40px}
+    .section-title h2{font-size:clamp(26px,4vw,36px);font-weight:900;margin-bottom:10px}
+    .section-title p{color:var(--text-dim);font-size:16px}
+    .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+    .about-box{background:var(--bg-card);border:1px solid var(--border-card);border-radius:16px;padding:25px}
+    .about-box h3{font-size:20px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+    .about-box p{color:var(--text-muted);font-size:15px;line-height:1.7}
+    .features-list{list-style:none;margin-top:10px}
+    .features-list li{color:var(--text-muted);font-size:14px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+    .contact{padding:80px 5%;background:var(--bg-dark)}
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1100px;margin:0 auto}
+    .contact h2{font-size:24px;margin-bottom:10px}
+    .contact-subtitle{color:var(--text-dim);font-size:14px;margin-bottom:20px}
+    .contact-info-item{margin-bottom:10px;font-size:14px;color:var(--text-muted);display:flex;align-items:center;gap:8px}
+    .contact-btns{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:25px}
+    .c-btn{padding:14px;border-radius:12px;text-align:center;text-decoration:none;font-weight:700;transition:0.2s;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px}
+    .c-btn:hover{transform:translateY(-2px);opacity:0.95}
+    .c-wa{background:var(--brand-whatsapp);color:#fff}
+    .c-call{background:#ffffff;color:#000000}
+    .c-mail{background:var(--bg-input);border:1px solid #333;color:#fff}
+    .c-mess{background:var(--brand-messenger);color:#fff}
+    .c-insta{background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);color:#fff;grid-column: span 2}
+    .contact-form{display:flex;flex-direction:column}
+    input,textarea{width:100%;padding:14px;background:var(--bg-input);border:1px solid var(--border-card);border-radius:10px;color:var(--text-main);margin-bottom:15px;font-size:15px;outline:none;transition:0.3s}
+    input:focus,textarea:focus{border-color:#444}
+    button.submit{width:100%;padding:14px;background:var(--text-main);color:var(--bg-dark);border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer;transition:0.3s}
+    button.submit:hover{background:#e6e6e6;transform:translateY(-2px)}
+    .form-credit{color:var(--text-dim);font-size:13px;margin-top:15px;text-align:center}
+    footer{text-align:center;padding:20px;color:#555;font-size:14px;border-top:1px solid #111}
+    @media(max-width:768px){header{flex-direction:column;gap:15px;text-align:center} .hero{padding:60px 5%} .c-insta{grid-column: span 1} .contact-btns{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><div class="logo-icon">W</div><div class="logo-text">WATEEN Studio</div></div>
+    <nav><a href="#hero">الرئيسية</a><a href="#services">خدماتنا</a><a href="#about">من نحن</a><a href="#contact">تواصل معنا</a></nav>
+  </header>
+  <section id="hero" class="hero">
+    <h1>مواقع تعريفية تليق بشغلك<span>We Build Websites That Bring Clients</span></h1>
+    <p>بنصمم موقعك ليكون واجهة احترافية تجيب لك عملاء، مش مجرد شكل حلو</p>
+    <a class="btn-whatsapp" href="https://wa.me/201125848557" target="_blank">💬 تواصل واتساب: 01125848557</a>
+  </section>
+  <section id="services" class="services">
+    <div class="card"><div class="icon">🏗️</div><h3>شركات المقاولات</h3><p>عرض مشاريعك وسابقة أعمالك بشكل احترافي</p></div>
+    <div class="card"><div class="icon">🏭</div><h3>المصانع والشركات</h3><p>واجهة رسمية تزيد ثقة العملاء فيك</p></div>
+    <div class="card"><div class="icon">🏢</div><h3>المكاتب والبيزنس</h3><p>موقع تعريفي كامل بخدماتك وفريقك</p></div>
+    <div class="card"><div class="icon">🏥</div><h3>العيادات</h3><p>حجز مواعيد وعرض الخدمات والعنوان</p></div>
+    <div class="card"><div class="icon">🍽️</div><h3>المطاعم</h3><p>منيو أونلاين وموقعك وساعات العمل</p></div>
+  </section>
+  <section id="about" class="about">
+    <div class="about-container">
+      <div class="section-title"><h2>عن WATEEN Studio</h2><p>شريكك التكنولوجي لبناء حضور رقمي قوي واحترافي</p></div>
+      <div class="about-grid">
+        <div class="about-box"><h3>🚀 من نحن؟</h3><p>استوديو متخصص في تصميم وتطوير المواقع التعريفية والحلول البرمجية للأنشطة التجارية والشركات. هدفنا ليس مجرد إنشاء موقع، بل تقديم تجربة مستخدم ممتازة تضمن تحويل الزوار إلى عملاء حقيقيين.</p></div>
+        <div class="about-box"><h3>🎯 رؤيتنا</h3><p>مساعدة أصحاب الشركات والبيزنس في الوطن العربي على امتلاك واجهة رقمية مشرفة تعكس حجم أعمالهم وتزيد من ثقة العميل في علامتهم التجارية بكل سهولة واحترافية.</p></div>
+        <div class="about-box"><h3>✨ لماذا تختارنا؟</h3><ul class="features-list"><li>⚡ تصميمات عصرية وسريعة للغاية</li><li>📱 متوافق 100% مع جميع الشاشات والموبايل</li><li>🎯 تركيز على زيادة المبيعات والتحويلات</li><li>🛠️ دعم وتحديث مستمر لموقعك</li></ul></div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <div class="contact-grid">
+      <div>
+        <h2>تواصل معنا بأي طريقة تريحك</h2>
+        <p class="contact-subtitle">اختار الطريقة المناسبة ليك وهنرد عليك فوراً</p>
+        <div class="contact-info-item">📱 واتساب: 01125848557</div>
+        <div class="contact-info-item">📧 wateenwtynwateen@gmail.com</div>
+        <div class="contact-info-item">📸 انستجرام: @wateenwtynwateen</div>
+        <div class="contact-btns">
+          <a class="c-btn c-wa" href="https://wa.me/201125848557" target="_blank">💬 واتساب</a>
+          <a class="c-btn c-call" href="tel:+201125848557">📞 اتصال</a>
+          <a class="c-btn c-mail" href="https://mail.google.com/mail/?view=cm&to=wateenwtynwateen@gmail.com&su=طلب موقع من WATEEN Studio" target="_blank">📧 إيميل</a>
+          <a class="c-btn c-mess" href="https://www.facebook.com/profile.php?id=61594865180224" target="_blank">💬 ماسنجر</a>
+          <a class="c-btn c-insta" href="https://instagram.com/wateenwtynwateen" target="_blank">📸 انستجرام</a>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="sendToWhatsApp(event)">
+          <input id="name" type="text" placeholder="اسمك" required>
+          <input id="phone" type="tel" placeholder="رقمك" required>
+          <textarea id="msg" rows="4" placeholder="رسالتك..." required></textarea>
+          <button class="submit" type="submit">إرسال على الواتساب</button>
+          <div class="form-credit">تم التصميم بواسطة K.G.F</div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer>© 2026 WATEEN Studio - Web Design & Development</footer>
+  <script>
+    function sendToWhatsApp(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value;
+      const phone=document.getElementById('phone').value;
+      const msg=document.getElementById('msg').value;
+      const text=`مرحبا Wateen Studio%0Aاسمي: ${encodeURIComponent(name)}%0Aرقمي: ${encodeURIComponent(phone)}%0Aرسالتي: ${encodeURIComponent(msg)}`;
+      window.open(`https://wa.me/201125848557?text=${text}`,'_blank');
+    }
+  </script>
+</body>
+</html>
